@@ -1,0 +1,23 @@
+<div class="container">
+  <h1><strong><%= @restaurant.name.capitalize  %></strong></h1>
+  <div>
+    <ul>
+      <li>Address: <%= @restaurant.address %></li>
+      <li>Phone number: <%= @restaurant.phone_number %></li>
+      <li>Reviews:</li>
+      <ul>
+        <% @restaurant.reviews.each do |review| %>
+          <li>
+            <p>Comment:
+              <p><%= review.content  %></p>
+            </p>
+            <p><%= review.rating  %> stars</p>
+          </li>
+        <% end %>
+      </ul>
+
+    </ul>
+  </div>
+  <%= link_to "Write a review", new_restaurant_review_path(@restaurant) %>
+  <%= link_to "Back", restaurants_path  %>
+</div>
