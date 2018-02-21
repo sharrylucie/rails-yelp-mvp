@@ -3,3 +3,23 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+// @import "navbar";
+
+@import 'show';
+
+.container {
+  padding: 20px;
+}
+
+.restaurant-style {
+  color: rgb(50, 177, 189);
+}
+
+.restaurant-style:hover {
+  text-decoration: none;
+  color: rgb(189, 100, 36);
+}
+
+.list-group-item:hover {
+  text-decoration: none;
+}

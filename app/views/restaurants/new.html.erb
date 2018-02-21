@@ -5,6 +5,10 @@
     <%= f.input :address %>
     <%= f.input :phone_number %>
     <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
-    <%= f.button :submit %>
+    <div class="btn-group">
+      <%= f.button :submit %>
+      <%= link_to "Back", restaurants_path, class:"btn btn-default" %>
+    </div>
+
   <% end %>
 </div>

@@ -1,23 +1,28 @@
 <div class="container">
   <h1><strong><%= @restaurant.name.capitalize  %></strong></h1>
   <div>
-    <ul>
-      <li>Address: <%= @restaurant.address %></li>
-      <li>Phone number: <%= @restaurant.phone_number %></li>
-      <li>Reviews:</li>
-      <ul>
-        <% @restaurant.reviews.each do |review| %>
-          <li>
-            <p>Comment:
-              <p><%= review.content  %></p>
-            </p>
-            <p><%= review.rating  %> stars</p>
-          </li>
-        <% end %>
-      </ul>
-
+    <ul class="list-group">
+      <dl class="dl-horizontal font-resto">
+        <dt>Address: </dt>
+        <dd><%= @restaurant.address %></dd>
+        <dt>Phone number: </dt>
+        <dd><%= @restaurant.phone_number %></dd>
+        <dt>Reviews:</dt>
+        <div class="container review-list">
+          <ul>
+            <% @restaurant.reviews.each do |review| %>
+              <li class="list-group-item">
+                <p><dt><%= review.rating  %> *</dt></p>
+                <p><dd>-<%= review.content  %></dd></p>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </dl>
     </ul>
   </div>
-  <%= link_to "Write a review", new_restaurant_review_path(@restaurant) %>
-  <%= link_to "Back", restaurants_path  %>
+  <div class="btn-group">
+    <%= link_to "Write a review", new_restaurant_review_path(@restaurant), class:"btn btn-default" %>
+    <%= link_to "Back", restaurants_path, class:"btn btn-default" %>
+  </div>
 </div>

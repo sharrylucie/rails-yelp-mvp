@@ -1,11 +1,10 @@
 <div class="container">
-  <h1><strong>Restaurants</strong></h1>
   <div>
-    <ul>
+    <ul class="list-group">
       <% @restaurants.each do |restaurant| %>
-        <li><%= link_to restaurant.name.capitalize, restaurant_path(restaurant)  %></li>
+        <li class="list-group-item"><%= link_to restaurant.name.capitalize, restaurant_path(restaurant), class:"restaurant-style" %></li>
       <% end %>
     </ul>
   </div>
-  <%= link_to "New restaurant", new_restaurant_path(@restaurant)  %>
+  <%= link_to "New restaurant", new_restaurant_path(@restaurant), class:"btn btn-default" %>
 </div>
